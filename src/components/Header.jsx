@@ -1,7 +1,10 @@
 import PropTypes from "prop-types";
-
-export function Header({ children }) {
-  return <div>{children}</div>;
+export default function Header({ children }) {
+  return (
+    <div>
+      {children} <p>Soala & Temitayo</p>
+    </div>
+  );
 }
 
 // Define prop types

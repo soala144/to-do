@@ -53,13 +53,13 @@
 @media (min-width: 500px) {
   body {
     background: var(--desktop-background-image) var(--Background-color);
-    background-image: no-repeat;
+    background-repeat: no-repeat;
   }
 }
 
 @media (max-width: 500px) {
   body {
     background: var(--mobile-background-image) var(--Background-color);
-    background-image: no-repeat;
+    background-repeat: no-repeat;
   }
 }
