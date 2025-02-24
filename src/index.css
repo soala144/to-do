@@ -49,7 +49,23 @@
 
 .App {
   margin: 0 auto;
+  max-width: 500px;
 }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+.logo {
+  text-transform: uppercase;
+  letter-spacing: 15px;
+  font-size: 40px;
+  color: #fff;
+}
+
 @media (min-width: 500px) {
   body {
     background: var(--desktop-background-image) var(--Background-color);
