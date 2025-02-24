@@ -1,5 +1,5 @@
 const Title = () => {
-  return <div>Todo</div>;
+  return <h1 className="logo">todo</h1>;
 };
 
 export default Title;
