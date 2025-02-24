@@ -1,5 +1,9 @@
 const ThemeIcon = () => {
-  return <div>ThemeIcon</div>;
+  return (
+    <div>
+      <img src="/public/images/icon-moon.svg" alt="" />
+    </div>
+  );
 };
 
 export default ThemeIcon;

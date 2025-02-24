@@ -1,5 +1,5 @@
 const FilterButtons = () => {
-  return <div>FilterButtons</div>;
+  return <div></div>;
 };
 
 export default FilterButtons;

@@ -59,6 +59,7 @@ header {
   margin-bottom: 2rem;
   margin-top: 2rem;
 }
+
 .logo {
   text-transform: uppercase;
   letter-spacing: 15px;
@@ -66,10 +67,47 @@ header {
   color: #fff;
 }
 
+.todo-form {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.todo-form button {
+  position: absolute;
+  transform: translate(50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: var(--body-color);
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+}
+
+input {
+  width: 100%;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  background-color: var(--body-color);
+  color: var(--inputText-color);
+  border-radius: 5px;
+  box-shadow: var(--shadow);
+}
+
+.input[type="text"] {
+  color: var(--Text-color);
+}
 @media (min-width: 500px) {
   body {
     background: var(--desktop-background-image) var(--Background-color);
     background-repeat: no-repeat;
+  }
+  .todo-form button {
+    left: 1rem;
+  }
+  input {
+    height: 64px;
+    padding: 0 4rem;
   }
 }
 
