@@ -4,6 +4,7 @@ import Title from "./components/Title";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
 import Header from "./components/Header";
+import TodoItem from "./components/TodoItem";
 function App() {
   return (
     <div className="App">
@@ -12,7 +13,9 @@ function App() {
         <ThemeIcon />
       </Header>
       <TodoForm />
-      <TodoList />
+      <TodoList>
+        <TodoItem />
+      </TodoList>
       <FilterButtons />
     </div>
   );
