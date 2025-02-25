@@ -149,6 +149,7 @@ input {
 .empty-todo img {
   width: 5rem;
 }
+
 .todo-text {
   font-size: 18px;
   line-height: 10px;
@@ -175,6 +176,41 @@ input {
 }
 .input[type="text"] {
   color: var(--Text-color);
+}
+
+.todo-control {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+  font-size: 14px;
+  color: var(--Text-color);
+}
+
+.filter-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.filter-buttons button {
+  all: unset;
+  font-weight: bold;
+}
+
+.filter-buttons button:hover {
+  color: var(--TodoText-color);
+}
+
+.filter-buttons button.active {
+  color: var(--bright-blue);
+}
+
+.clear-list {
+  all: unset;
+}
+
+.clear-list:hover {
+  color: var(--TodoText-color);
 }
 @media (min-width: 500px) {
   body {

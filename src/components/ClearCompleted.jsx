@@ -1,5 +1,5 @@
 const ClearCompleted = () => {
-  return <div>ClearCompleted</div>;
+  return <button className="clear-list">Clear Completed</button>;
 };
 
 export default ClearCompleted;
