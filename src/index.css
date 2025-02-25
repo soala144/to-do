@@ -125,6 +125,30 @@ input {
   border: 1px solid var(--border-color);
 }
 
+.checked-text {
+  color: var(--CompletedText-color);
+  text-decoration: line-through;
+}
+
+.checked-background {
+  background: linear-gradient(0deg, #55ddff, #c058f3);
+}
+.empty-todo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem 0;
+  gap: 1rem;
+}
+.empty-todo p {
+  font-size: 18px;
+  color: var(--TodoText-color);
+}
+
+.empty-todo img {
+  width: 5rem;
+}
 .todo-text {
   font-size: 18px;
   line-height: 10px;

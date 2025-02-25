@@ -5,6 +5,7 @@ import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
 import Header from "./components/Header";
 import TodoItem from "./components/TodoItem";
+import EmptyTodoList from "./components/EmptyTodoList";
 function App() {
   return (
     <div className="App">
@@ -14,7 +15,8 @@ function App() {
       </Header>
       <TodoForm />
       <TodoList>
-        <TodoItem />
+        {/* <TodoItem /> */}
+        <EmptyTodoList />
       </TodoList>
       <FilterButtons />
     </div>
