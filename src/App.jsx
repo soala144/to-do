@@ -26,7 +26,7 @@ function App() {
         <Title />
         <ThemeIcon />
       </Header>
-      <TodoForm onText={setText} handleSubmit={handleSubmit} />
+      <TodoForm onText={setText} handleSubmit={handleSubmit} text={text} />
 
       <TodoList>
         {todoList.length === 0 ? (
