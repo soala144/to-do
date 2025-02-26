@@ -227,6 +227,13 @@ input {
   .todos {
     padding: 1.5rem;
   }
+
+  .filter-buttons button,
+  .check-icon,
+  .cancel-icon,
+  .clear-list {
+    cursor: pointer;
+  }
 }
 
 @media (max-width: 500px) {

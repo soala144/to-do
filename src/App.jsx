@@ -8,17 +8,41 @@ import TodoItem from "./components/TodoItem";
 import EmptyTodoList from "./components/EmptyTodoList";
 import ClearCompleted from "./components/ClearCompleted";
 import NoOfItemsLeft from "./components/NoOfItemsLeft";
+import { useState } from "react";
 function App() {
+  const [text, setText] = useState("");
+  const [todoList, setTodoList] = useState([]);
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (!text) return;
+    const newTodo = { text, id: Date.now(), completed: false };
+    setTodoList((todo) => [...todo, newTodo]);
+    setText("");
+  }
+
   return (
     <div className="App">
       <Header>
         <Title />
         <ThemeIcon />
       </Header>
-      <TodoForm />
+      <TodoForm onText={setText} handleSubmit={handleSubmit} />
+
       <TodoList>
-        {/* <TodoItem /> */}
-        <EmptyTodoList />
+        {todoList.length === 0 ? (
+          <EmptyTodoList />
+        ) : (
+          todoList.map((todoItem) => (
+            <TodoItem
+              todoItem={todoItem}
+              key={todoItem.id}
+              onTodolist={setTodoList}
+              todoList={todoList}
+            />
+          ))
+        )}
+
+        {/* <EmptyTodoList /> */}
         <div className="todo-control">
           <NoOfItemsLeft />
           <FilterButtons />
