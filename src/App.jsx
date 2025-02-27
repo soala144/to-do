@@ -8,11 +8,26 @@ import TodoItem from "./components/TodoItem";
 import EmptyTodoList from "./components/EmptyTodoList";
 import ClearCompleted from "./components/ClearCompleted";
 import NoOfItemsLeft from "./components/NoOfItemsLeft";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 function App() {
+  const getData = () => {
+    const data = JSON.parse(localStorage.getItem("TodoList"));
+    if (data) {
+      return JSON.parse(localStorage.getItem("TodoList"));
+    } else {
+      return [];
+    }
+  };
+
+  // Stated
   const [text, setText] = useState("");
-  const [todoList, setTodoList] = useState([]);
+  const [todoList, setTodoList] = useState(getData());
   const [filter, setFilter] = useState("All");
+
+  useEffect(() => {
+    localStorage.setItem("TodoList", JSON.stringify(todoList));
+  }, [todoList]);
+
   function handleSubmit(e) {
     e.preventDefault();
     if (!text) return;
