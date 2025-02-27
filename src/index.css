@@ -231,6 +231,7 @@ input {
   }
 
   .filter-buttons button,
+  .theme-switch-icon img,
   .check-icon,
   .cancel-icon,
   .clear-list {
