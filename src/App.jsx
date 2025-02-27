@@ -12,6 +12,7 @@ import { useState } from "react";
 function App() {
   const [text, setText] = useState("");
   const [todoList, setTodoList] = useState([]);
+  const [filter, setFilter] = useState("All");
   function handleSubmit(e) {
     e.preventDefault();
     if (!text) return;
@@ -19,6 +20,12 @@ function App() {
     setTodoList((todo) => [...todo, newTodo]);
     setText("");
   }
+
+  const filterdTodoList = todoList.filter((todo) => {
+    if (filter === "Active") return !todo.completed;
+    if (filter === "Completed") return todo.completed;
+    return true;
+  });
 
   return (
     <div className="App">
@@ -29,10 +36,10 @@ function App() {
       <TodoForm onText={setText} handleSubmit={handleSubmit} text={text} />
 
       <TodoList>
-        {todoList.length === 0 ? (
-          <EmptyTodoList />
+        {filterdTodoList.length === 0 ? (
+          <EmptyTodoList filter={filter} />
         ) : (
-          todoList.map((todoItem) => (
+          filterdTodoList.map((todoItem) => (
             <TodoItem
               todoItem={todoItem}
               key={todoItem.id}
@@ -44,11 +51,16 @@ function App() {
 
         {/* <EmptyTodoList /> */}
         <div className="todo-control">
-          <NoOfItemsLeft />
-          <FilterButtons />
-          <ClearCompleted />
+          <NoOfItemsLeft todoList={todoList} />
+          <FilterButtons
+            filter={filter}
+            onFilter={setFilter}
+            screenSize="desktop"
+          />
+          <ClearCompleted onTodolist={setTodoList} />
         </div>
       </TodoList>
+      <FilterButtons filter={filter} onFilter={setFilter} screenSize="mobile" />
     </div>
   );
 }
