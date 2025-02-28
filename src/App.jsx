@@ -30,9 +30,10 @@ function App() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (!text) return;
+    const trimmedText = text.trim();
+    if (!trimmedText) return;
     const newTodo = { text, id: Date.now(), completed: false };
-    setTodoList((todo) => [...todo, newTodo]);
+    setTodoList((todo) => [newTodo, ...todo]);
     setText("");
   }
 
